@@ -1,6 +1,13 @@
-# WSL2 Ultimate Dev Setup
+# Dev Setup Scripts
 
-Script de configuração automatizada para um ambiente de desenvolvimento completo no WSL2.
+Scripts de configuração automatizada para um ambiente de desenvolvimento completo.
+
+## Scripts disponíveis
+
+| Script | Plataforma |
+|---|---|
+| `setup.sh` | WSL2 (Ubuntu) |
+| `setup_mac.sh` | macOS (Homebrew) |
 
 ## O que é instalado
 
@@ -20,9 +27,9 @@ Script de configuração automatizada para um ambiente de desenvolvimento comple
 | Ferramenta | Descrição |
 |---|---|
 | `eza` | `ls` moderno com ícones |
-| `bat` / `batcat` | `cat` com syntax highlighting |
+| `bat` | `cat` com syntax highlighting |
 | `ripgrep` | busca rápida em arquivos |
-| `fd-find` | `find` moderno |
+| `fd` | `find` moderno |
 | `fzf` | fuzzy finder |
 | `btop` / `htop` | monitores de sistema |
 | `tmux` | multiplexador de terminal |
@@ -34,6 +41,8 @@ Script de configuração automatizada para um ambiente de desenvolvimento comple
 - [NVM](https://github.com/nvm-sh/nvm) + Node.js LTS
 
 ## Uso
+
+### WSL2 (Ubuntu)
 
 ```bash
 chmod +x setup.sh
@@ -50,6 +59,19 @@ Após a execução:
 wsl --shutdown
 ```
 
+### macOS
+
+```bash
+chmod +x setup_mac.sh
+./setup_mac.sh
+```
+
+Após a execução:
+
+1. Abra as configurações do seu terminal (iTerm2, Terminal ou outro)
+2. Selecione a fonte `JetBrainsMono Nerd Font`
+3. Reinicie o terminal
+
 ## Aliases configurados
 
 | Alias | Comando |
@@ -57,12 +79,18 @@ wsl --shutdown
 | `ls` | `eza --icons` |
 | `ll` | `eza -lah --icons` |
 | `la` | `eza -a --icons` |
-| `cat` | `batcat` |
+| `cat` | `bat` |
 | `v` | `nvim` |
 | `c` | `clear` |
 
 ## Requisitos
 
+**WSL2**
 - WSL2 com Ubuntu
 - Acesso à internet
 - `sudo` configurado
+
+**macOS**
+- macOS 10.15 (Catalina) ou superior
+- Acesso à internet
+- Xcode Command Line Tools (`xcode-select --install`)
